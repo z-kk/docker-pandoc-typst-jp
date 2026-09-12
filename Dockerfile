@@ -2,6 +2,9 @@ FROM pandoc/typst:latest
 
 RUN apk --no-cache add make
 
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+RUN uv tool install watchfiles
+
 RUN apk --no-cache add font-noto-cjk
 ARG bg_ver="v0.0.4"
 RUN wget https://github.com/yuru7/bizin-gothic/releases/download/${bg_ver}/BizinGothicNF_${bg_ver}.zip \

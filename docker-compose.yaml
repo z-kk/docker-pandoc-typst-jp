@@ -13,3 +13,11 @@ services:
     volumes:
       - ./data:/data
     entrypoint: [ "make" ]
+
+  watchfiles:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/data
+    entrypoint: [ "sh", "-c", "watchfiles make *.md" ]
