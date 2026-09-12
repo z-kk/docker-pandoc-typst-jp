@@ -5,3 +5,11 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./data:/data
+
+  make:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/data
+    entrypoint: [ "make" ]

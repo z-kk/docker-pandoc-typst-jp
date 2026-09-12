@@ -1,5 +1,7 @@
 FROM pandoc/typst:latest
 
+RUN apk --no-cache add make
+
 RUN apk --no-cache add font-noto-cjk
 ARG bg_ver="v0.0.4"
 RUN wget https://github.com/yuru7/bizin-gothic/releases/download/${bg_ver}/BizinGothicNF_${bg_ver}.zip \
