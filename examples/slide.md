@@ -1,0 +1,106 @@
+```{=typst}
+#import "@preview/touying:0.7.4": *
+#import themes.simple: *
+
+#show: simple-theme
+```
+
+---
+codefont: Bizin Gothic NF
+linkcolor: 0022ee
+---
+
+# サンプル Markdown
+
+## 箇条書き
+
+### 番号無し
+
+- アイテム1
+- アイテム2
+    - サブアイテム
+- アイテム3
+- アイテム4
+
+### 番号あり
+
+1. アイテム1
+1. アイテム2
+1. アイテム3
+1. アイテム4
+
+### チェックボックス
+
+- [ ] 未チェック
+- [X] チェック済
+- [-] 進行中
+
+## 改ページ
+
+↓ここで改ページ↓
+
+```{=typst}
+#pagebreak()
+```
+
+↑ここで改ページ↑
+
+## 書式設定
+
+### 文字装飾
+
+- **太字**
+- __bold__
+- *斜体*
+- _italic_
+- ***太字斜体***
+- ___bold italic___
+- ~~取り消し線~~
+
+### ソースコード
+
+```c
+#include <stdio.h>
+
+/****************************/
+/* 関数名: main()           */
+/* 備考: 日本語幅確認       */
+/****************************/
+int main() {
+    printf("sample\n");
+    return 0;
+}
+```
+
+インラインコード: `main()` のテスト
+
+## 数式
+
+$$
+\sum_{i=1}^n a_i = 0
+$$
+
+インライン数式: $E = mc^2$ のテスト
+
+## 表
+
+| 左揃え | 中央揃え | 右揃え |
+|:---|:--:|---:|
+|セル1|セル2|セル3|
+|左揃えテスト|中央揃えテスト|右揃えテスト|
+
+## リンク
+
+- [GitHub](https://github.com/z-kk/docker-pandoc-typst-jp)
+- [Program Files](C:/Program Files)
+
+## 画像
+
+```{=typst}
+#figure(
+    image("img/sample.png", height: 70%),
+    caption: [画像キャプション]
+)
+```
+
+![画像](img/sample.png)

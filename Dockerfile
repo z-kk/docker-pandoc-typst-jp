@@ -8,4 +8,7 @@ RUN wget https://github.com/yuru7/bizin-gothic/releases/download/${bg_ver}/Bizin
  && mv BizinGothicNF_${bg_ver} /usr/local/share/fonts/
 ARG bg_ver
 
+COPY ./touying /usr/local/share/typst/packages/preview/touying/0.7.4
+COPY ./touying-slide.typ /usr/local/share/pandoc/templates/touying-slide.typ
+
 ENTRYPOINT [ "/usr/local/bin/pandoc", "-t", "typst" ]
